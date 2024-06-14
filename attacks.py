@@ -53,11 +53,11 @@ def test(device, classes, target_model, test_loader):
     targeted_attack = False
 
     fgsm_cfg = Configuration(False, "fgsm", eps=0.3)
-    sgm_cfg  = Configuration(False, "sgm_l2", eps=0.01, norm='l2', iter=300)
-    #sgm_cfg = Configuration(True, "sgm_inf", eps=0.001, norm='inf', iter=300)
-    dgm_cfg  = Configuration(True, "dgm_l2", eps=0.01, lr=0.001, norm='l2', iter=300)
-    #dgm_cfg  = Configuration(True, "dgm_inf", eps=0.001, lr=0.000, norm='inf', iter=300)
-    bim_cfg  = Configuration(True, "bim", eps=0.1, alp=0.01, iter=300)
+    #sgm_cfg  = Configuration(False, "sgm_l2", eps=0.01, norm='l2', iter=300)
+    sgm_cfg = Configuration(True, "sgm_inf", eps=0.001, norm='inf', iter=300)
+    #dgm_cfg  = Configuration(True, "dgm_l2", eps=0.01, lr=0.001, norm='l2', iter=300)
+    dgm_cfg  = Configuration(True, "dgm_inf", eps=0.001, lr=0.001, norm='inf', iter=300)
+    bim_cfg  = Configuration(True, "bim", eps=0.09, alp=0.001, iter=300)
 
     count = 0
 

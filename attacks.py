@@ -50,7 +50,7 @@ def prediction(model, x):
 
 def test(device, classes, target_model, test_loader):
 
-    targeted_attack = True
+    targeted_attack = False
 
     fgsm_cfg = Configuration(False, "fgsm", eps=0.3)
     sgm_cfg  = Configuration(False, "sgm_l2", eps=0.01, norm='l2', iter=300)
